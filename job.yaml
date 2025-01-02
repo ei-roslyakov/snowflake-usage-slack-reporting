@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: snowflake-costs-alert
+  namespace: default
+spec:
+  timeZone: "Etc/UTC"
+  schedule: "19 14 * * 1"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: report-generator
+            image: snowflake-usage-slack-reporting:latest
+            envFrom:
+            - secretRef:
+                name: snowflake-costs-alert
+          restartPolicy: OnFailure
