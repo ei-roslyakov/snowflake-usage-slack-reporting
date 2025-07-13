@@ -1,4 +1,4 @@
-FROM --platform=amd64 python:3.10.13-bullseye
+FROM python:3.13.5-bullseye
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
