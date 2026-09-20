@@ -1,4 +1,4 @@
-snowflake-connector-python==4.7.3
+snowflake-connector-python==4.7.4
 tabulate==0.10.0
 python-dotenv==1.2.3
 loguru==0.7.3
